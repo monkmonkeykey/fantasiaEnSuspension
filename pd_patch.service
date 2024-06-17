@@ -1,0 +1,11 @@
+[Unit]
+Description=Patch de Pure Data
+After=network.target
+
+[Service]
+User=pi
+ExecStart= pd /home/pi/fantasiaEnSuspension/fantasiaEnSuspension.pd
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
