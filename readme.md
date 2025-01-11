@@ -64,9 +64,13 @@ Description=Patch de Pure Data
 After=network.target
 
 [Service]
-User=pi
-ExecStart=pd /home/pi/fantasiaEnSuspension/fantasiaEnSuspension.pd
+User=lynnettecampos
+WorkingDirectory=/home/lynnettecampos/fantasiaEnSuspension
+Environment="DISPLAY=:0"
+ExecStart=/usr/bin/pd -audiooutdev 1 -alsa -nogui /home/lynnettecampos/fantasiaEnSuspension/fantasiaEnSuspension.pd
+
 Restart=always
+Environment="HOME=/home/lynnettecampos" "USER=lynnettecampos"
 
 [Install]
 WantedBy=multi-user.target
